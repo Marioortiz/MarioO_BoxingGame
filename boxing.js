@@ -27,7 +27,7 @@ function applyDamage(opponent, damage) {
     console.log(`${currentPlayer.name} lands a KNOCKOUT on ${opponent.name}!🥊`);
     }
     opponent.health -= damage;
-    if (opponent.health < 0 || damage == 10) {
+    if (opponent.health < 0 || damage === 10) {
     // Ensure health doesn't go below 0 and automatic KO
     opponent.health = 0;
     }
@@ -36,7 +36,7 @@ function applyDamage(opponent, damage) {
     
 // Function to check if the game is over
 function checkKnockout(opponent) {
-    if ( opponent == 0) {
+    if ( opponent.health === 0) {
     console.log(`${opponent.name} has been knocked out!`);
     console.log(`${currentPlayer.name} is the WINNER! 🏆`);
     return true; // Game over
